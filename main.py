@@ -1,59 +1,59 @@
-# import cv2
+# # import cv2
+
+# # # camera = cv2.VideoCapture(0)
+
+# # # if camera.isOpened():
+# # #     print('CAMERA CONECTADA')
+
+# # # else:
+# # #     print('erro')
+# # #     camera.release()
+ 
 
 # # camera = cv2.VideoCapture(0)
 
-# # if camera.isOpened():
-# #     print('CAMERA CONECTADA')
+# # sucesso, frame = camera.read()
 
-# # else:
-# #     print('erro')
-# #     camera.release()
+# # print(sucesso)
+
+# # camera.release()
+
+# # import cv2
+
+# # camera = cv2.VideoCapture(0)
+
+# # sucesso, frame = camera.read()
+
+# # if sucesso:
+# #     cv2.imshow("Minha câmera", frame)
+# #     cv2.waitKey(0)
+
+# # camera.release()
+# # cv2.destroyAllWindows()
+
+
+# # def verificar_fps(fps):
+
+# #     if fps <= 0 :
+# #         raise ValueError('FPS INVÁLIDO')
+# #         return false
+    
+# #     print('Câmera conectada com sucesso.')
+
+
+# # try:
+# #     resultado = verificar_fps(-10)
  
+# #     print(resultado)
 
-# camera = cv2.VideoCapture(0)
 
-# sucesso, frame = camera.read()
+# # except ValueError as erro:
+# #     print(f'ERRO: {erro}')
 
-# print(sucesso)
 
-# camera.release()
+# # Abrindo nossos recursos de câmera, responsabilidade abrir a câmera.
 
 # import cv2
-
-# camera = cv2.VideoCapture(0)
-
-# sucesso, frame = camera.read()
-
-# if sucesso:
-#     cv2.imshow("Minha câmera", frame)
-#     cv2.waitKey(0)
-
-# camera.release()
-# cv2.destroyAllWindows()
-
-
-# def verificar_fps(fps):
-
-#     if fps <= 0 :
-#         raise ValueError('FPS INVÁLIDO')
-#         return false
-    
-#     print('Câmera conectada com sucesso.')
-
-
-# try:
-#     resultado = verificar_fps(-10)
- 
-#     print(resultado)
-
-
-# except ValueError as erro:
-#     print(f'ERRO: {erro}')
-
-
-# Abrindo nossos recursos de câmera, responsabilidade abrir a câmera.
-
-import cv2
 
 
 
@@ -72,21 +72,21 @@ def abrir_camera():
 
 
 
-def abrir_gravacao(largura, altura):
+# def abrir_gravacao(largura, altura):
 
-    gravador = cv2.VideoWriter(
+#     gravador = cv2.VideoWriter(
 
-        'video_teste.mp4',
-         cv2.VideoWriter_fourcc(* 'mp4v'),
-         60.0,
-         (largura, altura)
+#         'video_teste.mp4',
+#          cv2.VideoWriter_fourcc(* 'mp4v'),
+#          60.0,
+#          (largura, altura)
 
-    )
+#     )
 
-    if not gravador.isOpened():
-        raise RuntimeError('Erro ao abrir a gravação')
+#     if not gravador.isOpened():
+#         raise RuntimeError('Erro ao abrir a gravação')
     
-    return gravador
+#     return gravador
 
 
 
@@ -102,18 +102,18 @@ def capturar_frames(camera):
 
 
 
-def gravando_frames(gravador, frame):
+# def gravando_frames(gravador, frame):
 
-     gravador.write(frame)
+#      gravador.write(frame)
 
-     if frame is None:
-        raise ValueError('Erro ao gravar os frames') 
+#      if frame is None:
+#         raise ValueError('Erro ao gravar os frames') 
 
-     return gravador 
+#      return gravador 
 
 
 
-# Abrindo nosso Sistema, responsabilidade iniciar nossa aplicação , camera e gravador 
+# # Abrindo nosso Sistema, responsabilidade iniciar nossa aplicação , camera e gravador 
 
 def abrir_sistema():
 
@@ -148,10 +148,12 @@ def abrir_sistema():
             print('Recursos liberados com sucesso')
 
 
-abrir_sistema()
-# 08/11
-# documentação dias 07/11 e 08/11. Funções evoluiram, onde todo o fluxo esta funcionando e gravando frames e guardando em um arquivo mp4. 
-# alguns tratamentos de erros foram colocados tambem, evolui durante a semana esse codigo
+if __name__ == '__main__':
+   abrir_sistema()
+
+# # 08/11
+# # documentação dias 07/11 e 08/11. Funções evoluiram, onde todo o fluxo esta funcionando e gravando frames e guardando em um arquivo mp4. 
+# # alguns tratamentos de erros foram colocados tambem, evolui durante a semana esse codigo
 
 
 
